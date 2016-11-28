@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DataLayer.Schedule>
+
+@{
+    ViewBag.Title = "BookHistory";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>BookHistory</h2>
+
+<p>
+   
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Checked_In)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checked_Out)
+        </th>
+        <th>
+            Room No
+        </th>
+        <th>
+            User
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Checked_In)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Checked_Out)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room.RoomNo)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.User.User_Name)
+        </td>
+     
+    </tr>
+}
+
+</table>

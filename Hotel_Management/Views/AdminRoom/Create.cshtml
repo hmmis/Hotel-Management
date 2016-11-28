@@ -1,0 +1,54 @@
+﻿@model DataLayer.Room
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>Create Room</h2>
+
+@using (Html.BeginForm("Create", "AdminRoom",  FormMethod.Post, new { enctype = "multipart/form-data" }))  {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Room</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoomNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoomNo)
+            @Html.ValidationMessageFor(model => model.RoomNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Details)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Details)
+            @Html.ValidationMessageFor(model => model.Details)
+        </div>
+
+        <div class="editor-label">
+           Cetagory Name:
+        </div>
+        <div class="editor-field">
+             @Html.DropDownList("CategoryId", (List<SelectListItem>)ViewBag.clist)
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+        <div class="editor-field">
+            Upload A Room Picture
+        </div>
+        <div class="editor-field">
+            <input id="Picture" title="Upload a Room image"  type="file" name="file" />
+        </div>        
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

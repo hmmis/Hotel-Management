@@ -1,0 +1,34 @@
+﻿@model DataLayer.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_HotelUserLayout.cshtml";
+}
+
+
+<a class="btn btn-default" href="@Url.Action("BookNewRoom", "User")"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Book New Room</a>
+
+@Html.ActionLink("View My Book", "BookedList","User",new {@class="btn btn-default" }) 
+@Html.ActionLink("Old Book History", "OldBookedListHistory","User",new {@class="btn btn-default" }) <br />
+
+<table border="1" class="table table-bordered table-hover">
+    <tr>
+        <td>Name</td>
+        <td> @Html.DisplayFor(model => model.Name)</td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>  @Html.DisplayFor(model => model.User_Name)</td>
+    </tr>
+     <tr>
+        <td>Email</td>
+        <td>  @Html.DisplayFor(model => model.Email)</td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td>  @Html.DisplayFor(model => model.Mobile)</td>
+    </tr>
+    <tr>
+        <td>OtherInfo</td>
+        <td>  @Html.DisplayFor(model => model.Other)</td>
+    </tr>
+</table>

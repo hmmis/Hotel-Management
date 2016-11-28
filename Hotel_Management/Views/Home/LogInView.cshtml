@@ -1,0 +1,31 @@
+﻿@model DataLayer.User
+@{
+    Layout = "~/Views/shared/_HotelHomeLayout.cshtml";
+}
+ 
+        <form class="form-horizontal" action="@Url.Action("LogInAction","Home")" method="POST">
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="email">Usename:</label>
+                  <div class="col-sm-5">
+                      @Html.EditorFor(model => model.User_Name)
+                      @Html.ValidationMessageFor(model => model.User_Name)
+                    <!--input type="email" class="form-control" id="email" placeholder="Enter username"-->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-4" for="pwd">Password:</label>
+                  <div class="col-sm-5">
+                      @Html.EditorFor(model => model.Password)
+                      @Html.ValidationMessageFor(model => model.Password)  
+                    <!--input type="password" class="form-control" id="pwd" placeholder="Enter password"-->
+                  </div>
+                </div>
+                @ViewBag.Message
+               
+                <div class="form-group">        
+                  <div class="col-sm-offset-4 col-sm-5">
+                    <button type="submit" class="btn btn-default">Log In</button>
+                  </div>
+                </div>
+          </form>
+

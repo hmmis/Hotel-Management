@@ -1,0 +1,20 @@
+﻿@model DataLayer.Schedule
+@{
+    Layout = "~/Views/shared/_HotelHomeLayout.cshtml";
+}
+
+
+        
+        <h3>Find Your Room</h3>
+        <form action="@Url.Action("FindHotelRoom","Home")" method="Get" class="form-inline">
+
+            <input type="datetime" name="Checked_In" id="datepicker" value="" placeholder="Check In" class="form-control" required/>
+            <input type="datetime" name="Checked_Out" id="datepicker1" value="" placeholder="Check Out" class="form-control" required/>
+           @Html.DropDownList("CategoryId", (List<SelectListItem>)ViewBag.clist, new { @class="form-control"})
+
+            <input class="btn btn-info" type="submit" name="submit" value="Find Room"/>
+        </form>
+            
+				@ViewBag.Message
+			
+     

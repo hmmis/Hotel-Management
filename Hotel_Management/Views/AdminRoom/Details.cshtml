@@ -1,0 +1,40 @@
+﻿@model DataLayer.Room
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>Room Details</h2>
+
+<fieldset>
+    <legend>Room</legend>
+
+    <div class="display-label">
+          <img src="~/img/@Html.DisplayFor(modelItem => Model.Picture)" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RoomNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RoomNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Details)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Details)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category.CategoryName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

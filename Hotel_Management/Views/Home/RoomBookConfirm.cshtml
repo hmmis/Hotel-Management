@@ -1,0 +1,36 @@
+﻿@model DataLayer.Room
+
+@{
+    Layout = "~/Views/shared/_HotelHomeLayout.cshtml";
+    ViewBag.Title = "RoomBookConfirm";
+}
+
+<h2>RoomBookConfirm</h2>
+
+<table class="table table-bordered table-hover searchResult">
+   
+     
+     <tr>
+        <td>
+             <div class="row">
+				<div class="col-sm-4">
+                    <img src="~/img/@Html.DisplayFor(modelItem => Model.Picture)" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                </div>
+				<div class="col-sm-8" >
+                    Room Details : @Html.DisplayFor(modelItem => Model.Details)<br />
+                    Room No : @Html.DisplayFor(modelItem => Model.RoomNo)<br />
+                    Room Category :  @Html.DisplayFor(modelItem => Model.Category.CategoryName) <br /><br />
+
+
+                    Check In Date  @ViewBag.CheckedIn <br />  
+                    Check Out Date  @ViewBag.CheckedOut<br /> 
+                    User Name :::: @ViewBag.userName
+                   
+                </div>
+			</div>
+        </td>
+    </tr>
+</table>
+@Html.ActionLink("Cancel", "Index", "Home",  new { @class="btn btn-danger pull-left"})
+@Html.ActionLink("Book Confirm", "RoomBookFinal", "Home",  new { @class="btn btn-success pull-right"})
+

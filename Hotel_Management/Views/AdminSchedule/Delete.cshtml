@@ -1,0 +1,54 @@
+﻿@model DataLayer.Schedule
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Schedule</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Checked_In)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Checked_In)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Checked_Out)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Checked_Out)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Room_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Room_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User_Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsHistoryRole)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsHistoryRole)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

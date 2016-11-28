@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DataLayer.Room>
+
+@{
+    Layout = "~/Views/shared/_HotelHomeLayout.cshtml";
+    ViewBag.Title = "FindHotelRoom";
+}
+
+ <h3>Search Result "AVAILABLE" Rooms.................</h3>
+
+<table class="table table-bordered table-hover searchResult">
+   
+@foreach (var item in Model) {
+     
+     <tr>
+        <td>
+             <div class="row">
+				<div class="col-sm-4">
+                    <img src="~/img/@Html.DisplayFor(modelItem => item.Picture)" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+                </div>
+				<div class="col-sm-8" >
+                    Room Details : @Html.DisplayFor(modelItem => item.Details)<br /><br/>
+                    Room Category :  @Html.DisplayFor(modelItem => item.Category.CategoryName) <br /><br />
+                    
+                    @Html.ActionLink("Book", "RoomBook", "Home", new { id = item.Id}, new { @class="btn btn-success pull-right"})
+                </div>
+			</div>
+        </td>
+    </tr>
+}
+ @ViewBag.Message
+</table>

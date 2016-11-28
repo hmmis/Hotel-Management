@@ -1,0 +1,61 @@
+﻿@model DataLayer.User
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/shared/_HotelHomeLayout.cshtml";
+}
+
+<h2>SignUp</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>User</legend>
+
+        
+            Name:
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+            <br><br>
+
+            Username:
+       
+            @Html.EditorFor(model => model.User_Name)
+            @Html.ValidationMessageFor(model => model.User_Name)
+            <br><br>
+
+            Password:
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+            <br><br>
+        
+
+            Email:
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+            <br /><br>
+
+            Mobile:
+            @Html.EditorFor(model => model.Mobile)
+            @Html.ValidationMessageFor(model => model.Mobile)
+            <br/><br>
+
+             Other Info:
+            @Html.EditorFor(model => model.Other)
+            @Html.ValidationMessageFor(model => model.Other)
+            <br /><br>
+            
+            
+            <br/><br>
+       
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

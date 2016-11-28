@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+     <!--=========================Script===============================-->
+	<script src="~/Scripts/jquery.js"></script>
+	<script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/DatePicker.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+    <!--=========================CSS===============================-->
+    <link rel="stylesheet" href="~/Scripts/jquery-ui.css">  
+    <link rel="stylesheet" href="~/Scripts/bootstrap.min.css">
+	<link rel="stylesheet" href="~/Scripts/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="~/Scripts/HomeCSS.css">
+    
+
+</head>
+<body>
+    <div class="container">
+       
+        <center><h1>Welcome To Hotel ABC</h1>
+        
+        <a href="@Url.Action("index","Home")" class="pull-right">Home</a><br>
+         <a href="@Url.Action("SignUp","Home")" class="pull-right">Sing Up</a><br>
+        <a href="@Url.Action("LogIn","Home")" class="pull-right">Log In</a>
+        <hr>
+
+        @RenderBody()
+
+        </center>
+    </div>
+</body>
+</html>

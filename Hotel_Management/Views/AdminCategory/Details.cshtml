@@ -1,0 +1,23 @@
+﻿@model DataLayer.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>Room Category Details</h2>
+
+<fieldset>
+    <legend>Category</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

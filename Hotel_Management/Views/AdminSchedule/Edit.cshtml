@@ -1,0 +1,61 @@
+﻿@model DataLayer.Schedule
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Schedule</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Checked_In)
+        </div>
+        <div class="editor-field">
+           @Html.DisplayFor(model => model.Checked_In)
+           
+            @Html.ValidationMessageFor(model => model.Checked_In)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Checked_Out)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Checked_Out)
+            @Html.ValidationMessageFor(model => model.Checked_Out)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Room_Id)
+        </div>
+        <div class="editor-field">
+          
+            @Html.DropDownList("dept", (List<SelectListItem>)ViewBag.dlist)
+            @Html.ValidationMessageFor(model => model.Room_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User_Id)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.User_Id)
+            @Html.ValidationMessageFor(model => model.User_Id)
+        </div>
+
+       
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

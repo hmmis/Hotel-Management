@@ -1,0 +1,34 @@
+﻿@model DataLayer.User
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/shared/_HotelAdminLayout.cshtml";
+}
+
+<h2>User Details</h2>
+<table border="1" class="table table-bordered table-hover">
+    <tr>
+        <td>Name</td>
+        <td> @Html.DisplayFor(model => model.Name)</td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td>  @Html.DisplayFor(model => model.User_Name)</td>
+    </tr>
+     <tr>
+        <td>Email</td>
+        <td>  @Html.DisplayFor(model => model.Email)</td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td>  @Html.DisplayFor(model => model.Mobile)</td>
+    </tr>
+    <tr>
+        <td>OtherInfo</td>
+        <td>  @Html.DisplayFor(model => model.Other)</td>
+    </tr>
+</table>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
